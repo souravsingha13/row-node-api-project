@@ -9,6 +9,7 @@ const http = require('http');
 const https = require('https');
 const fs = require('fs');
 const path = require('path');
+const data = require('./lib/data');
 
 const { handleReqRes } = require('./helpers/haldelReqRes');
 const environments = require('./helpers/environments');
@@ -16,9 +17,22 @@ const environments = require('./helpers/environments');
 // app object - module scaffolding
 const app = {};
 // Configuration
+// data.create('test', 'newFile', { name: 'Sourav Singha' }, (err) => {
+//     console.log('This was the error', err);
+// });
 
-console.log(environments);
+// data.read('test', 'newFile',(err, data) => {
+//     console.log('This was the error', err);
+//     console.log('This was the data', data);
+// });
 
+// data.update('test', 'newFile', { name: 'Sourav Singha', job: 'Software Engineer' }, (err) => {
+//     console.log('This was the error', err);
+// });
+
+data.delete('test', 'newFile', (err) => {
+    console.log('This was the error', err);
+});
 //create server
 app.createServer = () => {
 
