@@ -11,21 +11,21 @@ const fs = require('fs');
 const path = require('path');
 
 const { handleReqRes } = require('./helpers/haldelReqRes');
+const environments = require('./helpers/environments');
 
 // app object - module scaffolding
 const app = {};
 // Configuration
-app.config = {
-    port: 3001,
-};
 
+console.log(environments);
 
 //create server
 app.createServer = () => {
 
     const server = http.createServer(app.handleReqRes);
-    server.listen(app.config.port, () => {
-        console.log(`Server listening on port ${app.config.port}`);
+    server.listen(environments.port, () => {
+        console.log(`Environment: ${process.env.NODE_ENV || 'development'}`);
+        console.log(`Server listening on port ${environments.port}`);
     });
 }
 
