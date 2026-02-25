@@ -11,6 +11,7 @@ const environments = {};
 environments.development = {
     port: 3001,
     envName: 'development',
+    secratekey: 'thisIs a secrate key',
 };
 // environments.staging = {
 //     port: 3002,
@@ -19,6 +20,7 @@ environments.development = {
 environments.production = {
     port: 3003,
     envName: 'production',
+    secratekey: 'thisIs a secrate key',
 };
 
 const currentEnvironment =
