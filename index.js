@@ -4,6 +4,7 @@
     Author: Sourav Singha
     Date: 2026-01-18 
  */
+
 // Dependencies
 const http = require('http');
 const https = require('https');
@@ -35,7 +36,6 @@ data.delete('test', 'newFile', (err) => {
 });
 //create server
 app.createServer = () => {
-
     const server = http.createServer(app.handleReqRes);
     server.listen(environments.port, () => {
         console.log(`Environment: ${process.env.NODE_ENV || 'development'}`);
@@ -45,5 +45,4 @@ app.createServer = () => {
 
 //handle request and response
 app.handleReqRes = handleReqRes;
-
 app.createServer();
